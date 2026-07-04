@@ -10,6 +10,7 @@ venv/
 # Database
 *.db
 *.sqlite3
+finrelief.db
 
 # Environment
 .env

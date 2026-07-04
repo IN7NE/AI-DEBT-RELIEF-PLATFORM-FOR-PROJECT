@@ -17,21 +17,19 @@ from app.routers.payment import router as payment_router
 from app.routers.settlement import router as settlement_router
 from app.routers.creditor import router as creditor_router
 from app.routers.analysis import router as analysis_router
-# Create database tables
+
 Base.metadata.create_all(bind=engine)
 
-# Create FastAPI app
 app = FastAPI(
     title="AI Debt Relief & Financial Recovery Platform",
     version="1.0.0"
 )
 
-# Register routers
 app.include_router(health_router)
 app.include_router(auth_router)
 app.include_router(debt_router)
 app.include_router(payment_router)
-app.include_router(settlement_router)  
+app.include_router(settlement_router)
 app.include_router(creditor_router)
 app.include_router(analysis_router)
 
