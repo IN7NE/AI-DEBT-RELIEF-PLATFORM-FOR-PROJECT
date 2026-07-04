@@ -24,3 +24,32 @@ def analyze_finances(
         user_id=data.user_id,
         monthly_income=data.monthly_income,
     )
+from fastapi import Body
+import google.generativeai as genai
+
+
+@router.post("/letter")
+def generate_letter(data: dict = Body(...)):
+
+    prompt = f"""
+Write a professional debt settlement negotiation letter.
+
+Name: {data['name']}
+
+Creditor: {data['creditor']}
+
+Outstanding Debt: {data['debt']}
+
+Offer Amount: {data['offer']}
+
+Reason:
+{data['reason']}
+
+Keep the tone polite and professional.
+"""
+
+    response = genai.GenerativeModel("gemini-1.5-flash").generate_content(prompt)
+
+    return {
+        "letter": response.text
+    }
