@@ -1,35 +1,72 @@
 export default function DebtForm() {
   return (
-    <div style={{ padding: "40px" }}>
-      <h1>Debt Management</h1>
+    <div
+      style={{
+        minHeight: "100vh",
+        background: "#f4f7fb",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <div
+        style={{
+          width: "500px",
+          background: "#fff",
+          padding: "35px",
+          borderRadius: "15px",
+          boxShadow: "0 10px 25px rgba(0,0,0,.1)",
+        }}
+      >
+        <h1 style={{ textAlign: "center", color: "#2563eb" }}>
+          Add Loan Details
+        </h1>
 
-      <form style={{ width: "400px" }}>
         <input
-          type="text"
-          placeholder="Loan Name"
-          style={{ width: "100%", padding: "10px", margin: "10px 0" }}
+          placeholder="Loan Amount"
+          style={inputStyle}
         />
 
         <input
-          type="number"
-          placeholder="Outstanding Amount"
-          style={{ width: "100%", padding: "10px", margin: "10px 0" }}
-        />
-
-        <input
-          type="number"
           placeholder="Monthly EMI"
-          style={{ width: "100%", padding: "10px", margin: "10px 0" }}
+          style={inputStyle}
         />
 
         <input
-          type="number"
-          placeholder="Interest Rate"
-          style={{ width: "100%", padding: "10px", margin: "10px 0" }}
+          placeholder="Monthly Income"
+          style={inputStyle}
         />
 
-        <button type="submit">Save Debt</button>
-      </form>
+        <input
+          placeholder="Overdue Months"
+          style={inputStyle}
+        />
+
+        <button style={btnStyle}>
+          Save Debt
+        </button>
+      </div>
     </div>
   );
 }
+
+const inputStyle = {
+  width: "100%",
+  padding: "12px",
+  marginTop: "18px",
+  borderRadius: "8px",
+  border: "1px solid #ccc",
+  fontSize: "16px",
+};
+
+const btnStyle = {
+  width: "100%",
+  marginTop: "25px",
+  padding: "14px",
+  background: "#2563eb",
+  color: "white",
+  border: "none",
+  borderRadius: "8px",
+  fontSize: "17px",
+  cursor: "pointer",
+};
