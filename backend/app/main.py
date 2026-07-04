@@ -18,6 +18,7 @@ from app.routers.settlement import router as settlement_router
 from app.routers.creditor import router as creditor_router
 from app.routers.analysis import router as analysis_router
 
+# Create database tables
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
@@ -25,6 +26,7 @@ app = FastAPI(
     version="1.0.0"
 )
 
+# Register routers
 app.include_router(health_router)
 app.include_router(auth_router)
 app.include_router(debt_router)

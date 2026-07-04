@@ -1,6 +1,6 @@
 import os
-import google.generativeai as genai
 
+import google.generativeai as genai
 from dotenv import load_dotenv
 from sqlalchemy.orm import Session
 
@@ -36,8 +36,6 @@ def analyze_user_finances(db: Session, user_id: int, monthly_income: float):
     prompt = f"""
 You are an expert financial advisor.
 
-User Details:
-
 Monthly Income: {monthly_income}
 
 Total Debt: {total_debt}
@@ -47,7 +45,6 @@ Monthly EMI: {total_emi}
 Debt Income Ratio: {ratio:.2f}
 
 Provide:
-
 1. Risk Level
 2. Financial Score (0-100)
 3. Best Debt Strategy
@@ -87,5 +84,5 @@ Return in simple readable English.
         "monthly_emi": total_emi,
         "debt_income_ratio": round(ratio, 2),
         "strategy": strategy,
-        "recommendation": response.text
+        "recommendation": response.text,
     }

@@ -1,5 +1,6 @@
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, Body
 from sqlalchemy.orm import Session
+import google.generativeai as genai
 
 from app.database import get_db
 from app.schemas.analysis import (
@@ -24,13 +25,10 @@ def analyze_finances(
         user_id=data.user_id,
         monthly_income=data.monthly_income,
     )
-from fastapi import Body
-import google.generativeai as genai
 
 
 @router.post("/letter")
 def generate_letter(data: dict = Body(...)):
-
     prompt = f"""
 Write a professional debt settlement negotiation letter.
 
