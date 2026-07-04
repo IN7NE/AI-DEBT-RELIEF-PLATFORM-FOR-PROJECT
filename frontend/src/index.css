@@ -1,0 +1,40 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+  background:#f4f7fb;
+  color:#222;
+}
+
+button{
+  background:#2563eb;
+  color:white;
+  border:none;
+  padding:10px 18px;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+button:hover{
+  background:#1d4ed8;
+}
+
+input{
+  border:1px solid #ccc;
+  padding:10px;
+  border-radius:6px;
+  color:#111;
+  background:white;
+}
+
+h1,h2,h3{
+  color:#222;
+}
+
+p{
+  color:#555;
+}
