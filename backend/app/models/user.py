@@ -19,6 +19,7 @@ class User(Base):
 
     created_at = Column(DateTime, default=datetime.utcnow)
 
+    # Relationship
     debts = relationship(
         "Debt",
         back_populates="user",

@@ -17,6 +17,7 @@ from app.routers.payment import router as payment_router
 from app.routers.settlement import router as settlement_router
 from app.routers.creditor import router as creditor_router
 from app.routers.analysis import router as analysis_router
+from app.routers.finance import router as finance_router
 
 # Create database tables
 Base.metadata.create_all(bind=engine)
@@ -34,6 +35,7 @@ app.include_router(payment_router)
 app.include_router(settlement_router)
 app.include_router(creditor_router)
 app.include_router(analysis_router)
+app.include_router(finance_router)
 
 
 @app.get("/")

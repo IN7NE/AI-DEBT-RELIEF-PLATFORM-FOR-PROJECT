@@ -18,6 +18,6 @@ finrelief.db
 # VS Code
 .vscode/
 
-# OS files
+# OS
 .DS_Store
 Thumbs.db
